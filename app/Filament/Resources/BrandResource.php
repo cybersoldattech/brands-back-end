@@ -31,7 +31,8 @@ class BrandResource extends Resource
                 ToggleButtons::make('is_exclusive')
                     ->label('Is Exclusive ?')
                     ->grouped()
-                    ->boolean(),
+                    ->boolean()
+                    ->default(false),
                 TextInput::make('rating')
                     ->label(__('Rating'))
                     ->integer()
@@ -92,8 +93,6 @@ class BrandResource extends Resource
     {
         return [
             'index' => Pages\ListBrands::route('/'),
-            //            'create' => Pages\CreateBrand::route('/create'),
-            //            'edit' => Pages\EditBrand::route('/{record}/edit'),
         ];
     }
 }

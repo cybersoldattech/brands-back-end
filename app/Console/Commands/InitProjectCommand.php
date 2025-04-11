@@ -156,7 +156,7 @@ class InitProjectCommand extends Command
         $this->info('ℹ️ Starting to create admin user using Seeder Data.');
 
         User::query()->create([
-            'email' => 'admin@casinoonlinefrancais3.info',
+            'email' => 'admin@casinoonlinefrancais.info',
             'name' => 'Admin',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
