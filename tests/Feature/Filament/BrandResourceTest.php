@@ -45,7 +45,7 @@ describe(BrandResource::class, function (): void {
             ->toBe($name);
     });
 
-    it('Admin user can edit channel', function (): void {
+    it('Admin user can edit brand', function (): void {
         $brand = Brand::factory()->create();
 
         Livewire::test(BrandResource\Pages\ListBrands::class)
