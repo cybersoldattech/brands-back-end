@@ -137,10 +137,13 @@ class InitProjectCommand extends Command
     {
         $this->newLine();
 
+        $this->info('ℹ️ By default the database is configured with sqlite if you wish mysql please modify your environment file');
+
+        $this->newLine();
+
         $this->info('ℹ️ Starting migrate and seed tables in database.');
 
         Artisan::call('migrate');
-        Artisan::call('db:seed');
 
         $this->info(' ✅ migration and seed done properly.');
 
@@ -155,12 +158,7 @@ class InitProjectCommand extends Command
 
         $this->info('ℹ️ Starting to create admin user using Seeder Data.');
 
-        User::query()->create([
-            'email' => 'admin@casinoonlinefrancais.info',
-            'name' => 'Admin',
-            'email_verified_at' => now(),
-            'password' => Hash::make('password'),
-        ]);
+        Artisan::call('db:seed');
 
         $this->info(' ✅ Admin creation done properly.');
 
