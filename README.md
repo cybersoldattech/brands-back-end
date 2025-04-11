@@ -12,6 +12,10 @@ cd brands-back-end
 ```
 
 ### The project contains a command to initialize the project 
+```bash
+      php artisan app:init-project-command                                                                         
+```
+
 - [x] Installation of dependencies via composer and npm :tada:
 - [x] Creation of the Env file :tada:
 - [x] Generation of the key artisan  :tada:
@@ -22,6 +26,11 @@ cd brands-back-end
 > [!NOTE] 
 > It is possible to modify the env file to make specific needs.
 
+### Start Application
+
+```bash
+      php artisan serve                                                                         
+```
 
 ### The API will be accessible at: http://localhost:8000/api . Where 8000 is the application startup port
 
@@ -36,7 +45,7 @@ cd brands-back-end
       http://localhost:8000/api/brands 
 ```
 
-##### For PUT the brand 
+##### For UPDATE / PUT the brand 
 
 ```bash
       http://localhost:8000/api/brands/{id} 
@@ -59,6 +68,13 @@ cd brands-back-end
 
 
 ### Admin interface will be accessible at: http://localhost:8000/admin/login . where 8000 is the application startup port
+
+
+> [!NOTE] 
+> Information for admin user.
+> Email:**admin@casinoonlinefrancais.info**
+> Password:**password**
+
 
 ##### Login Interface
 

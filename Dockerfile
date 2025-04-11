@@ -1,22 +1,21 @@
 FROM php:8.2-alpine AS builder
 
-RUN apt-get update && apt-get install -y \
+RUN apk add --no-cache \
     git \
     curl \
     libpng-dev \
-    libonig-dev \
     libxml2-dev \
     zip \
     unzip \
     supervisor \
-    nginx \
-    build-essential \
+    npm \
+    bash \
     openssl
 
 RUN docker-php-ext-install \
     pdo_mysql \
     gd \
-    zip
+    zip \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -38,8 +37,8 @@ RUN cd /var/www/html && \
 
 FROM nginx:alpine
 
-COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY docker/nginx/site.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY nginx/site.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /var/www/html /var/www/html
 RUN chown -R www-data:www-data /var/www/html \
