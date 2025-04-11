@@ -26,6 +26,18 @@ cd brands-back-end
 > [!NOTE] 
 > It is possible to modify the env file to make specific needs.
 
+> [!NOTE] 
+> By default the database is configured with sqlite if you wish mysql please modify your environment file.after modifying the file please execute the commands below
+
+
+```bash
+      php artisan migrate                                                                         
+```
+
+```bash
+      php artisan db:seed                                                                         
+```
+
 ### Start Application
 
 ```bash
